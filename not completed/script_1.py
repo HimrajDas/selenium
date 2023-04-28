@@ -14,8 +14,8 @@ logging.basicConfig(filename="scrapper.log", level=logging.INFO)
 
 try:
     PATH = "C:\Program Files (x86)\chromedriver.exe"
-    service = Service(PATH)
-    driver = webdriver.Chrome(service=service)
+    # service = Service(PATH)
+    driver = webdriver.Chrome(service=Service(PATH))
     driver.get("https://www.techwithtim.net")
     logging.info(driver.title)
     search = driver.find_element(by=By.CLASS_NAME, value="search-field")
